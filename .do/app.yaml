@@ -43,6 +43,7 @@ services:
 
   # Frontend Service
   - name: web
+    type: static
     github:
       branch: master
       deploy_on_push: true
@@ -50,9 +51,6 @@ services:
     source_dir: /frontend
     build_command: npm install && npm run build
     output_dir: dist
-    instance_count: 1
-    instance_size_slug: basic-s
-    http_port: 8080
     routes:
       - path: /
     envs:
