@@ -15,7 +15,7 @@ services:
       deploy_on_push: true
       repo: your-username/your-repo-name
     source_dir: /backend
-    build_command: npm install && npx prisma generate
+    build_command: npm install --production=false && npx prisma generate
     run_command: node server.js
     environment_slug: node-js
     instance_count: 1
@@ -36,6 +36,10 @@ services:
         value: "5000"
     health_check:
       http_path: /api/transactions
+      initial_delay_seconds: 60
+      period_seconds: 30
+      timeout_seconds: 5
+      failure_threshold: 5
 
   # Frontend Service
   - name: web
