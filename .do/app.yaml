@@ -13,10 +13,10 @@ services:
     github:
       branch: master
       deploy_on_push: true
-      repo: your-username/your-repo-name
+      repo: ahtrr5371-ui/kbzweb-financial-management
     source_dir: /backend
     build_command: npm install --production=false && npx prisma generate
-    run_command: node server.js
+    run_command: npm start
     environment_slug: node-js
     instance_count: 1
     instance_size_slug: basic-s
@@ -46,7 +46,7 @@ services:
     github:
       branch: master
       deploy_on_push: true
-      repo: your-username/your-repo-name
+      repo: ahtrr5371-ui/kbzweb-financial-management
     source_dir: /frontend
     build_command: npm install && npm run build
     run_command: npx serve -s dist -l 8080
@@ -67,7 +67,7 @@ jobs:
     github:
       branch: master
       deploy_on_push: true
-      repo: your-username/your-repo-name
+      repo: ahtrr5371-ui/kbzweb-financial-management
     source_dir: /backend
     kind: PRE_DEPLOY
     run_command: npx prisma migrate deploy

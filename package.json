@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Financial Management & Dashboard Web Application with Transaction Parsing and Billing Integration",
   "scripts": {
+    "start": "npm run start:backend",
     "install:backend": "cd backend && npm install",
     "install:frontend": "cd frontend && npm install",
     "install:all": "npm run install:backend && npm run install:frontend",
