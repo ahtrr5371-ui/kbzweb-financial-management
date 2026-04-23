@@ -1,0 +1,31 @@
+{
+  "name": "financial-management-system",
+  "version": "1.0.0",
+  "description": "Financial Management & Dashboard Web Application with Transaction Parsing and Billing Integration",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "start:backend": "cd backend && npm start",
+    "prisma:migrate": "cd backend && npx prisma migrate deploy",
+    "prisma:generate": "cd backend && npx prisma generate"
+  },
+  "keywords": [
+    "financial",
+    "management",
+    "dashboard",
+    "transaction",
+    "billing",
+    "satellite",
+    "kbzpay"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

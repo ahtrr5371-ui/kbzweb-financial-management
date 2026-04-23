@@ -4,7 +4,10 @@ import FileUploadCard from '../components/FileUploadCard';
 import DashboardCharts from '../components/DashboardCharts';
 import TransactionTable from '../components/TransactionTable';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+// Use relative URL for production deployment (works with DigitalOcean App Platform)
+const API_BASE_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api` 
+  : (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api');
 
 const Dashboard = () => {
   const [summary, setSummary] = useState(null);
