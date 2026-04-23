@@ -11,7 +11,7 @@ services:
   # Backend API Service
   - name: api
     github:
-      branch: main
+      branch: master
       deploy_on_push: true
       repo: your-username/your-repo-name
     source_dir: /backend
@@ -19,7 +19,7 @@ services:
     run_command: node server.js
     environment_slug: node-js
     instance_count: 1
-    instance_size_slug: basic-xxs
+    instance_size_slug: basic-s
     http_port: 5000
     routes:
       - path: /api
@@ -35,12 +35,12 @@ services:
         scope: RUN_AND_BUILD_TIME
         value: "5000"
     health_check:
-      http_path: /health
+      http_path: /api/transactions
 
   # Frontend Service
   - name: web
     github:
-      branch: main
+      branch: master
       deploy_on_push: true
       repo: your-username/your-repo-name
     source_dir: /frontend
@@ -48,7 +48,7 @@ services:
     run_command: npx serve -s dist -l 8080
     environment_slug: node-js
     instance_count: 1
-    instance_size_slug: basic-xxs
+    instance_size_slug: basic-s
     http_port: 8080
     routes:
       - path: /
@@ -61,7 +61,7 @@ jobs:
   # Database Migration Job
   - name: db-migrate
     github:
-      branch: main
+      branch: master
       deploy_on_push: true
       repo: your-username/your-repo-name
     source_dir: /backend
