@@ -49,8 +49,7 @@ services:
       repo: ahtrr5371-ui/kbzweb-financial-management
     source_dir: /frontend
     build_command: npm install && npm run build
-    run_command: npx serve -s dist -l 8080
-    environment_slug: node-js
+    output_dir: dist
     instance_count: 1
     instance_size_slug: basic-s
     http_port: 8080
